@@ -13,11 +13,9 @@ import 'components/ResposiveWidget.dart';
 
 void main() {
   runApp(DevicePreview(
-    builder: (context) => MultiProvider(
-        providers: [
-          ChangeNotifierProvider(create: (context) => ThemeSwitchProvider())
-        ],
-        child: MyApp()),
+    builder: (context) => MultiProvider(providers: [
+      ChangeNotifierProvider(create: (context) => ThemeSwitchProvider())
+    ], child: MyApp()),
   ));
 }
 
