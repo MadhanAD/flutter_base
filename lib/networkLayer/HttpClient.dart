@@ -4,19 +4,20 @@ import 'dart:io';
 import 'package:flutter_base_app/networkLayer/ApiException.dart';
 import "package:http/http.dart" as http;
 
+//TODO: This class need to be updated based on Flutter 2.0.1 changes
 class HttpClient {
   static final HttpClient _singleton = HttpClient();
 
   static HttpClient get instance => _singleton;
 
   Future<dynamic> fetchData(String endPoint,
-      {Map<String, dynamic> params}) async {
+      {Map<String, dynamic>? params}) async {
     var responseJson;
     var uri = endPoint + (params != null ? this.queryParams(params) : "");
     var header = {HttpHeaders.contentTypeHeader: "application/json"};
 
     try {
-      final response = await http.get(uri, headers: header);
+      final response = await http.get(Uri.https(uri,""), headers: header);
       responseJson = _responseData(response);
     } on SocketException {
       throw FetchDataException("No Internet connection");
@@ -30,7 +31,7 @@ class HttpClient {
     var header = {HttpHeaders.contentTypeHeader: "application/json"};
 
     try {
-      final response = await http.post(endPoint, body: body, headers: header);
+      final response = await http.post(Uri.https(endPoint,""), body: body, headers: header);
       responseJson = _responseData(response);
     } on SocketException {
       throw FetchDataException("No Internet connection");
@@ -44,7 +45,7 @@ class HttpClient {
     var header = {HttpHeaders.contentTypeHeader: "application/json"};
 
     try {
-      final response = await http.put(endPoint, body: body, headers: header);
+      final response = await http.put(Uri.https(endPoint,""), body: body, headers: header);
       responseJson = _responseData(response);
     } on SocketException {
       throw FetchDataException("No Internet connection");

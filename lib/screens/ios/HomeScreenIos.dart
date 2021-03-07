@@ -4,7 +4,7 @@ import 'package:flutter_base_app/appProviders/ThemeSwitchProvider.dart';
 import 'package:provider/provider.dart';
 
 class HomeScreenIos extends StatefulWidget {
-  HomeScreenIos({Key key, this.title}) : super(key: key);
+  HomeScreenIos({this.title = ""});
 
   final String title;
 

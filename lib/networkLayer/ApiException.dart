@@ -8,18 +8,18 @@ class ApiException implements Exception {
 }
 
 class FetchDataException extends ApiException {
-  FetchDataException([String message])
+  FetchDataException([String message = ""])
       : super(message, "Error During network call: ");
 }
 
 class BadRequestException extends ApiException {
-  BadRequestException([String message]) : super(message, "Invalid Request: ");
+  BadRequestException([String message = ""]) : super(message, "Invalid Request: ");
 }
 
 class UnauthorisedException extends ApiException {
-  UnauthorisedException([String message]) : super(message, "Unauthorised: ");
+  UnauthorisedException([String message = ""]) : super(message, "Unauthorised: ");
 }
 
 class InvalidInputException extends ApiException {
-  InvalidInputException([String message]) : super(message, "Invalid Input");
+  InvalidInputException([String message = ""]) : super(message, "Invalid Input");
 }

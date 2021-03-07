@@ -4,9 +4,9 @@ import 'package:flutter_base_app/networkLayer/ApiResponse.dart';
 import 'package:flutter_base_app/repository/UserRepository.dart';
 
 class UserProvider with ChangeNotifier {
-  UserRepository _userRepository;
+  late UserRepository _userRepository;
 
-  ApiResponse<UserModel> _userModelResponse;
+  late ApiResponse<UserModel> _userModelResponse;
 
   ApiResponse<UserModel> get userModel => _userModelResponse;
 

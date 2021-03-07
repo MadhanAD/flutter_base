@@ -4,9 +4,9 @@ import 'package:flutter/material.dart';
 ThemeData basicMaterialThemeData(bool isLightTheme) {
   TextTheme _basicTextTheme(TextTheme base) {
     return base.copyWith(
-      subtitle1: base.subtitle1.copyWith(color: isLightTheme ? Colors.black : Colors.white),
+      subtitle1: base.subtitle1?.copyWith(color: isLightTheme ? Colors.black : Colors.white),
         headline1: base.headline1
-            .copyWith(color: isLightTheme ? Colors.black : Colors.white));
+            ?.copyWith(color: isLightTheme ? Colors.black : Colors.white));
   }
 
   ThemeData _themeData = isLightTheme ? ThemeData.light() : ThemeData.dark();
