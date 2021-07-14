@@ -4,7 +4,6 @@ import 'dart:io';
 import 'package:flutter_base_app/networkLayer/ApiException.dart';
 import "package:http/http.dart" as http;
 
-//TODO: This class need to be updated based on Flutter 2.0.1 changes
 class HttpClient {
   static final HttpClient _singleton = HttpClient();
 

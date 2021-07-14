@@ -31,10 +31,9 @@ dependencies:
   provider: ^5.0.0
 #  device_preview: ^0.5.5
   http: ^0.13.0
+  flutter_stripe: ^1.1.0
 
 dev_dependencies:
-  flutter_test:
-    sdk: flutter
 #  integration_test:
 #    sdk: flutter
 
